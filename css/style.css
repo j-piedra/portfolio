@@ -109,8 +109,10 @@ body {
 
 .navbar .nav-link {
   margin: 0 1rem;
+  /* color: #000000; */
   font-size: 0.8rem;
   font-weight: var(--weight-semibold);
+  mix-blend-mode: difference;
 }
 
 .nav-link:hover {
@@ -181,6 +183,7 @@ body {
 .form-group {
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
 }
 
 .contact-form input,
@@ -374,13 +377,14 @@ html[data-theme="dark"] .skill-icons img {
 }
 
 body {
-  background: linear-gradient(120deg, #3cdeff, #b1ff7d, #f60707, #f41585);
+  background: linear-gradient(60deg, #3cdeff,
+    #ffaf47, #feffff, #10ef9a);
   background-size: 300% 300%;
   animation: moveGradient 10s ease infinite;
 }
 
 html[data-theme="dark"] body {
-  background: linear-gradient(120deg, #0f0f0f, #1d1d1d, #17334e, #9d8787);
+  background: linear-gradient(120deg, #0f0f0f, #656464, #17334e, #9d8787);
   background-size: 300% 300%;
 }
 
