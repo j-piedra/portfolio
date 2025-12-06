@@ -25,6 +25,9 @@ h2::selection {
   text-transform: uppercase;
   font-size: 0.82rem;
   transition: 0.3s;
+  cursor: pointer;
+  width: fit-content;
+  font-weight: 700;
 }
 
 .btn-primary {
@@ -34,12 +37,18 @@ h2::selection {
 
 .btn-secondary {
   margin: 5px 0;
-  background-color: var(--bg-secondary);
-  color: var(--bg-primary);
+  /* background-color: var(--bg-secondary); */
+    /* mix-blend-mode: difference; */
+  /* color: white; */
+  background: var(--bg-gradient);
+  mix-blend-mode: difference;
 }
 
-.btn-secondary:hover {
-  background: var(--secondary-color);
+button.btn-secondary {
+  border: none;
+  /* color: #ffffff; */
+  /* font-weight: 800; */
+  /* font-size: larger; */
 }
 
 /* add hover to resume button */
@@ -77,22 +86,57 @@ h2::selection {
 }
 
 /* Header Container */
-.header-container {
+.section-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   /* margin-top: 8rem; */
   padding: 1rem;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
 }
 
 .header-container > div {
   margin-top: 1rem;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 1rem;
+}
+
+.hero-text {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  /* align-items: flex-start; */
+}
+
+
 .content-text {
   text-align: center;
   margin: 1.5rem 0;
+}
+
+.title {
+  height: 40%;
+  width: 100%;
+  text-align: left;
+  margin: 0;
 }
 
 .content-text h2 {
@@ -140,32 +184,32 @@ h2::selection {
 
 /* project 1 */
 .card:nth-child(1) {
-  background: url(../assets/project/juira.png) center center/cover;
+  background: url(../assets/project/1.png) center center/cover;
 }
 
 /* Project 2 */
 .card:nth-child(2) {
-  background: url(../assets/project/dogs.png) center center/cover;
+  background: url(../assets/project/2.png) center center/cover;
 }
 
 /* Project 3 */
 .card:nth-child(3) {
-  background: url(../assets/project/project-three.png) center center/cover;
+  background: url(../assets/project/3.png) center center/cover;
 }
 
 /* Project 4 */
 .card:nth-child(4) {
-  background: url(../assets/project/project-four.png) center center/cover;
+  background: url(../assets/project/4.png) center center/cover;
 }
 
 /* Project 5 */
 .card:nth-child(5) {
-  background: url(../assets/project/project-five.png) center center/cover;
+  background: url(../assets/project/5.png) center center/cover;
 }
 
 /* Project 6 */
 .card:nth-child(6) {
-  background: url(../assets/project/project-six.png) center center/cover;
+  background: url(../assets/project/6.png) center center/cover;
 }
 
 /* Media Queries */
