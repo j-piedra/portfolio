@@ -38,7 +38,7 @@ h2::selection {
 .btn-secondary {
   margin: 5px 0;
   /* background-color: var(--bg-secondary); */
-    /* mix-blend-mode: difference; */
+  /* mix-blend-mode: difference; */
   /* color: white; */
   background: var(--bg-gradient);
   mix-blend-mode: difference;
@@ -54,6 +54,12 @@ button.btn-secondary {
 /* add hover to resume button */
 .btn-primary:hover {
   background: var(--secondary-color);
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8),
+    0 0 25px rgba(255, 255, 255, 0.6);
+  /* transform: translateY(-2px); */
 }
 
 /* Dark mode toggle */
@@ -85,15 +91,14 @@ button.btn-secondary {
   transform: rotate(100deg);
 }
 
-/* Header Container */
 .section-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-top: 8rem; */
   padding: 1rem;
   width: 100%;
+  height: 100%;
 }
 
 .header-container {
@@ -103,6 +108,12 @@ button.btn-secondary {
   justify-content: center;
   padding: 1rem;
   width: 100%;
+}
+
+@media (max-width: 1046px) {
+  .header-container {
+    flex-direction: column;
+  }
 }
 
 .header-container > div {
@@ -125,7 +136,6 @@ button.btn-secondary {
   justify-content: center;
   /* align-items: flex-start; */
 }
-
 
 .content-text {
   text-align: center;
@@ -215,11 +225,16 @@ button.btn-secondary {
 /* Media Queries */
 @media (max-width: 768px) {
   .header-container {
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
     text-align: center;
   }
 
   .content-text h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .hero-text {
+    width: 100%;
+    padding-left: 2rem;
   }
 }

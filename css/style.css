@@ -90,8 +90,6 @@ body {
   box-shadow: var(--shadow); */
 }
 
-
-
 .navbar .container {
   display: flex;
   align-items: center;
@@ -104,7 +102,6 @@ body {
 .navbar .nav-menu {
   display: flex;
   align-items: center;
-  /* background: var(--bg-primary); */
 }
 
 .navbar .nav-link {
@@ -115,8 +112,24 @@ body {
   mix-blend-mode: difference;
 }
 
-.nav-link:hover {
-  /* color: var(--primary-color); */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* un poquito más abajo del texto */
+  width: 0%;
+  height: 2px;
+  background: var(--text-color); /* usa tu color de texto */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .navbar #logo img {
@@ -212,8 +225,6 @@ body {
 
 .header-container {
   height: 100vh;
-  display: flex;
-  /* background-image: url(../assets/bg.jpg); */
 }
 
 h2 {
@@ -267,7 +278,6 @@ html[data-theme="light"] .skill-icons img {
 html[data-theme="dark"] .skill-icons img {
   filter: brightness(1) contrast(1);
 }
-
 
 #technologies .skill-icons a {
   padding: 1rem;
@@ -377,8 +387,7 @@ html[data-theme="dark"] .skill-icons img {
 }
 
 body {
-  background: linear-gradient(60deg, #3cdeff,
-    #ffaf47, #feffff, #10ef9a);
+  background: linear-gradient(60deg, #3cdeff, #ffaf47, #feffff, #10ef9a);
   background-size: 300% 300%;
   animation: moveGradient 10s ease infinite;
 }
@@ -402,15 +411,16 @@ html[data-theme="dark"] body {
   }
 }
 
- h1,
- h2, p {
+h1,
+h2,
+p {
   color: #fff;
   position: relative;
-    mix-blend-mode: difference;
+  mix-blend-mode: difference;
 }
 
- h1::after,
- h2::after {
+h1::after,
+h2::after {
   content: attr(data-text);
   position: absolute;
   top: 0;
@@ -445,7 +455,7 @@ html[data-theme="dark"] body {
 }
 
 .toggle-icons img {
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .profile-image {
@@ -461,7 +471,6 @@ html[data-theme="dark"] body {
 
 .hero-image {
   object-fit: cover;
-
 }
 
 .animated-title span {
@@ -498,10 +507,10 @@ html[data-theme="dark"] body {
     flex-direction: column;
     width: calc(80% - 10px);
     transition: 0.3s;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
     padding: 2rem;
     border-radius: 5px;
-    align-items: flex-start;
+    align-items: flex-end;
   }
 
   .navbar .btn {
@@ -520,7 +529,7 @@ html[data-theme="dark"] body {
 
   .nav-menu li {
     margin-bottom: 0.5rem;
-    width: 100%;
+    /* width: 100%; */
   }
 
   .nav-menu .btn {
