@@ -20,7 +20,7 @@ function closeMenu() {
 
 // Event Listeners: Handling toggle event
 const toggleSwitch = document.querySelector(
-  '.theme-switch input[type="checkbox"]'
+  '.theme-switch input[type="checkbox"]',
 );
 
 //  Store color theme for future visits
@@ -154,4 +154,66 @@ document.addEventListener("mousemove", (e) => {
       span.style.transform = "scale(1)";
     }
   });
+});
+
+// --- Lógica del Modal de Galería ---
+const modal = document.getElementById("gallery-modal");
+const modalImg = document.getElementById("modal-image");
+const closeBtn = document.querySelector(".close-modal");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+
+let currentImages = [];
+let currentIndex = 0;
+
+// Agregar evento click a todas las tarjetas (cards)
+document.querySelectorAll(".card").forEach((card) => {
+  card.addEventListener("click", function () {
+    // Obtener el string de imágenes y convertirlo en un array
+    const imagesString = this.getAttribute("data-images");
+
+    if (imagesString) {
+      currentImages = imagesString.split(",").map((img) => img.trim());
+      currentIndex = 0; // Reiniciar al primer índice
+
+      if (currentImages.length > 0) {
+        modalImg.src = currentImages[currentIndex];
+        modal.style.display = "flex"; // Mostrar el modal
+
+        // Ocultar botones de navegación si solo hay 1 imagen
+        prevBtn.style.display = currentImages.length > 1 ? "block" : "none";
+        nextBtn.style.display = currentImages.length > 1 ? "block" : "none";
+      }
+    }
+  });
+});
+
+// Función para cambiar la imagen
+function changeImage(direction) {
+  currentIndex += direction;
+
+  // Lógica de carrusel infinito
+  if (currentIndex >= currentImages.length) {
+    currentIndex = 0;
+  } else if (currentIndex < 0) {
+    currentIndex = currentImages.length - 1;
+  }
+
+  modalImg.src = currentImages[currentIndex];
+}
+
+// Eventos de los botones de navegación
+nextBtn.addEventListener("click", () => changeImage(1));
+prevBtn.addEventListener("click", () => changeImage(-1));
+
+// Cerrar el modal al hacer clic en la "X"
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Cerrar el modal al hacer clic en el fondo oscuro
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
 });

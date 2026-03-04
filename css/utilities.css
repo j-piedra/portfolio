@@ -57,7 +57,8 @@ button.btn-secondary {
 }
 
 .glow-btn:hover {
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8),
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.8),
     0 0 25px rgba(255, 255, 255, 0.6);
   /* transform: translateY(-2px); */
 }
@@ -220,6 +221,16 @@ button.btn-secondary {
 /* Project 6 */
 .card:nth-child(6) {
   background: url(../assets/project/6.png) center center/cover;
+}
+
+/* Project 7 */
+.card:nth-child(7) {
+  background: url(../assets/project/7.png) center center/cover;
+}
+
+/* Project 8 */
+.card:nth-child(8) {
+  background: url(../assets/project/8.png) center center/cover;
 }
 
 /* Media Queries */
